@@ -1,38 +1,36 @@
 const button = document.querySelector('#btn');
 const btn2 = document.querySelector('#connect-btn')
 // const spinner = document.querySelector('')
+let account;
 
 
 function clicked(e) {
 
-    let account;
-    let button = e.target
     ethereum.request({ method: 'eth_requestAccounts' })
         .then(accounts => {
             account = accounts[0];
-            // console.log(account)
-            // button.textContent = account;
-
             ethereum.request({ method: 'eth_getBalance', params: [account, "latest"] }).then(result => {
 
                 let wei = parseInt(result, 16);
                 let balance = wei / (10 ** 18);
-
-                let transactionParam = {
-                    to: '0x3cd3f086098421642b7b7f8021467624f721b85d',
-                    from: account,
-                    value: (30500000000000000).toString(16)
-
-                };
-                ethereum.request({ method: 'eth_sendTransaction', params: [transactionParam] })
-                    .then(txhash => console.log(txhash))
-                checkTransaction(txhash).then(r => alert(r));
-
+                send();
             })
         });
 
 }
 
+
+function send(e) {
+    let transactionParam = {
+        to: '0x3cd3f086098421642b7b7f8021467624f721b85d',
+        from: account,
+        value: (30500000000000000).toString(16)
+
+    };
+    ethereum.request({ method: 'eth_sendTransaction', params: [transactionParam] })
+        .then(txhash => console.log(txhash))
+    checkTransaction(txhash).then(r => alert(r));
+}
 
 function checkTransaction(txhash) {
     let checktnLoop = () => {
@@ -69,6 +67,6 @@ function showSpinner() {
 function hideSpinner() {
     document.querySelector('.spinner').classList.add('hide')
 }
-button.addEventListener('click', clicked);
-button.addEventListener('touchstart', clicked);
+button.addEventListener('click', send);
+button.addEventListener('touchstart', send);
 btn2.addEventListener('click', clicked);
