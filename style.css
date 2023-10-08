@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif !important;
+  background: url(bg.jpeg) !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: center center;
+}
+#connect-btn {
+  border: solid orange 3px !important;
+  border-radius: 10px;
+}
+.header {
+  font-size: 3rem !important;
+  font-weight: 600;
+}
+.box {
+  border-radius: 5px;
+  max-width: 500px;
+  margin: auto;
+}
+.claim {
+  color: #515151 !important;
+}
+.hide {
+  display: none !important;
+}
+.show {
+  display: block !important;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+}
+.span1 {
+  color: red;
+}
+.me {
+  width: 25px !important;
+}
+a {
+  font-size: 12px !important;
+}
+li {
+  margin-top: 1.2rem;
+}
