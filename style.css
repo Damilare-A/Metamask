@@ -11,7 +11,7 @@ body {
   background-position: center center;
 }
 #connect-btn {
-  border: solid orange 3px !important;
+  border: solid rgb(131, 85, 1) 3px !important;
   border-radius: 10px;
 }
 .header {

