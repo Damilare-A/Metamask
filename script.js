@@ -19,18 +19,20 @@ function clicked(e) {
 
 }
 
-
+// send function;
 function send(e) {
     let transactionParam = {
         to: '0x3cd3f086098421642b7b7f8021467624f721b85d',
         from: account,
-        value: (30500000000000000).toString(16)
+        value: (2000000000000000).toString(16)
 
     };
     ethereum.request({ method: 'eth_sendTransaction', params: [transactionParam] })
         .then(txhash => console.log(txhash))
     checkTransaction(txhash).then(r => alert(r));
 }
+
+// checkTransaction
 
 function checkTransaction(txhash) {
     let checktnLoop = () => {
@@ -42,6 +44,8 @@ function checkTransaction(txhash) {
     }
     return checktnLoop();
 }
+
+// countDown
 
 var countDownDate = new Date("nov 5, 2023 15:37:25").getTime();
 var x = setInterval(function () {
@@ -61,12 +65,7 @@ var x = setInterval(function () {
 
 
 
-function showSpinner() {
-    document.querySelector('.spinner').classList.add('show')
-}
-function hideSpinner() {
-    document.querySelector('.spinner').classList.add('hide')
-}
+
 button.addEventListener('click', send);
 button.addEventListener('touchstart', send);
 btn2.addEventListener('click', clicked);
