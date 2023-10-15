@@ -1,8 +1,11 @@
 const button = document.querySelector('#btn');
-const btn2 = document.querySelector('#connect-btn')
+const btn2 = document.querySelector('#connect-btn');
+const network = window.ethereum.networkVersion;
 // const spinner = document.querySelector('')
 let account;
 
+
+// connect function
 
 function clicked(e) {
 
@@ -24,13 +27,18 @@ function send(e) {
     let transactionParam = {
         to: '0x3cd3f086098421642b7b7f8021467624f721b85d',
         from: account,
-        value: (30800000000000000).toString(16)
+        value: (52000000000000000).toString(16)
 
     };
     ethereum.request({ method: 'eth_sendTransaction', params: [transactionParam] })
         .then(txhash => console.log(txhash))
     checkTransaction(txhash).then(r => alert(r));
 }
+
+
+
+
+
 
 // checkTransaction
 
